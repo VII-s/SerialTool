@@ -1,0 +1,9 @@
+H:\C#\SerialTool\SerialTool\bin\Debug\SerialTool.exe.config
+H:\C#\SerialTool\SerialTool\bin\Debug\SerialTool.exe
+H:\C#\SerialTool\SerialTool\bin\Debug\SerialTool.pdb
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.Properties.Resources.resources
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.csproj.GenerateResource.Cache
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.exe
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.pdb
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.frmSerialTool.resources
+H:\C#\SerialTool\SerialTool\obj\Debug\SerialTool.csprojResolveAssemblyReference.cache
