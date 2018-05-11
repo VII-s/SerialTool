@@ -34,6 +34,8 @@
             this.lblSerialNum = new System.Windows.Forms.Label();
             this.cmbSerialNum = new System.Windows.Forms.ComboBox();
             this.grpSerial = new System.Windows.Forms.GroupBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.llbBlog = new System.Windows.Forms.LinkLabel();
             this.lblUnit = new System.Windows.Forms.Label();
             this.btnClearData = new System.Windows.Forms.Button();
             this.txtSendData = new System.Windows.Forms.TextBox();
@@ -48,6 +50,7 @@
             this.chkSendNewLine = new System.Windows.Forms.CheckBox();
             this.chkSendHEX = new System.Windows.Forms.CheckBox();
             this.chkTimingSend = new System.Windows.Forms.CheckBox();
+            this.chkSaveToFile = new System.Windows.Forms.CheckBox();
             this.chkRTS = new System.Windows.Forms.CheckBox();
             this.chkDTR = new System.Windows.Forms.CheckBox();
             this.cmbFlowControl = new System.Windows.Forms.ComboBox();
@@ -68,42 +71,35 @@
             this.serialPort1 = new System.IO.Ports.SerialPort(this.components);
             this.timerSend = new System.Windows.Forms.Timer(this.components);
             this.grpSerial.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.ssrSerialInfo.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtReceiveData
             // 
             this.txtReceiveData.BackColor = System.Drawing.SystemColors.Window;
-            this.txtReceiveData.Location = new System.Drawing.Point(0, 0);
-            this.txtReceiveData.Multiline = true;
+            resources.ApplyResources(this.txtReceiveData, "txtReceiveData");
             this.txtReceiveData.Name = "txtReceiveData";
-            this.txtReceiveData.ReadOnly = true;
-            this.txtReceiveData.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.txtReceiveData.Size = new System.Drawing.Size(623, 266);
-            this.txtReceiveData.TabIndex = 0;
+            this.txtReceiveData.TabStop = false;
             this.txtReceiveData.TextChanged += new System.EventHandler(this.txtReceiveData_TextChanged);
             // 
             // lblSerialNum
             // 
-            this.lblSerialNum.AutoSize = true;
-            this.lblSerialNum.Location = new System.Drawing.Point(5, 22);
+            resources.ApplyResources(this.lblSerialNum, "lblSerialNum");
             this.lblSerialNum.Name = "lblSerialNum";
-            this.lblSerialNum.Size = new System.Drawing.Size(41, 12);
-            this.lblSerialNum.TabIndex = 1;
-            this.lblSerialNum.Text = "串口号";
             // 
             // cmbSerialNum
             // 
             this.cmbSerialNum.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbSerialNum.FormattingEnabled = true;
-            this.cmbSerialNum.Location = new System.Drawing.Point(53, 18);
+            resources.ApplyResources(this.cmbSerialNum, "cmbSerialNum");
             this.cmbSerialNum.Name = "cmbSerialNum";
-            this.cmbSerialNum.Size = new System.Drawing.Size(75, 20);
-            this.cmbSerialNum.TabIndex = 2;
             this.cmbSerialNum.SelectedIndexChanged += new System.EventHandler(this.cmbSerialNum_SelectedIndexChanged);
             // 
             // grpSerial
             // 
+            this.grpSerial.Controls.Add(this.pictureBox1);
+            this.grpSerial.Controls.Add(this.llbBlog);
             this.grpSerial.Controls.Add(this.lblUnit);
             this.grpSerial.Controls.Add(this.btnClearData);
             this.grpSerial.Controls.Add(this.txtSendData);
@@ -120,6 +116,7 @@
             this.grpSerial.Controls.Add(this.lblSerialNum);
             this.grpSerial.Controls.Add(this.chkSendHEX);
             this.grpSerial.Controls.Add(this.chkTimingSend);
+            this.grpSerial.Controls.Add(this.chkSaveToFile);
             this.grpSerial.Controls.Add(this.chkRTS);
             this.grpSerial.Controls.Add(this.chkDTR);
             this.grpSerial.Controls.Add(this.cmbFlowControl);
@@ -132,166 +129,131 @@
             this.grpSerial.Controls.Add(this.lblDataBit);
             this.grpSerial.Controls.Add(this.cmbBaudRate);
             this.grpSerial.Controls.Add(this.lblBaudRate);
-            this.grpSerial.Location = new System.Drawing.Point(4, 268);
-            this.grpSerial.Margin = new System.Windows.Forms.Padding(0);
+            resources.ApplyResources(this.grpSerial, "grpSerial");
             this.grpSerial.Name = "grpSerial";
-            this.grpSerial.Padding = new System.Windows.Forms.Padding(0);
-            this.grpSerial.Size = new System.Drawing.Size(615, 179);
-            this.grpSerial.TabIndex = 3;
             this.grpSerial.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            resources.ApplyResources(this.pictureBox1, "pictureBox1");
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.TabStop = false;
+            // 
+            // llbBlog
+            // 
+            resources.ApplyResources(this.llbBlog, "llbBlog");
+            this.llbBlog.Name = "llbBlog";
+            this.llbBlog.TabStop = true;
+            this.llbBlog.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.llbBlog_LinkClicked);
             // 
             // lblUnit
             // 
-            this.lblUnit.AutoSize = true;
-            this.lblUnit.Location = new System.Drawing.Point(284, 84);
+            resources.ApplyResources(this.lblUnit, "lblUnit");
             this.lblUnit.Name = "lblUnit";
-            this.lblUnit.Size = new System.Drawing.Size(35, 12);
-            this.lblUnit.TabIndex = 5;
-            this.lblUnit.Text = "ms/次";
             // 
             // btnClearData
             // 
-            this.btnClearData.Location = new System.Drawing.Point(293, 17);
+            resources.ApplyResources(this.btnClearData, "btnClearData");
             this.btnClearData.Name = "btnClearData";
-            this.btnClearData.Size = new System.Drawing.Size(75, 23);
-            this.btnClearData.TabIndex = 4;
-            this.btnClearData.Text = "清除数据";
             this.btnClearData.UseVisualStyleBackColor = true;
             this.btnClearData.Click += new System.EventHandler(this.btnClearData_Click);
             // 
             // txtSendData
             // 
-            this.txtSendData.Location = new System.Drawing.Point(139, 138);
-            this.txtSendData.Multiline = true;
+            resources.ApplyResources(this.txtSendData, "txtSendData");
             this.txtSendData.Name = "txtSendData";
-            this.txtSendData.Size = new System.Drawing.Size(470, 33);
-            this.txtSendData.TabIndex = 4;
+            this.txtSendData.Leave += new System.EventHandler(this.txtSendData_Leave);
             // 
             // btnSendFile
             // 
-            this.btnSendFile.Location = new System.Drawing.Point(487, 80);
+            resources.ApplyResources(this.btnSendFile, "btnSendFile");
             this.btnSendFile.Name = "btnSendFile";
-            this.btnSendFile.Size = new System.Drawing.Size(121, 23);
-            this.btnSendFile.TabIndex = 4;
-            this.btnSendFile.Text = "发送文件";
             this.btnSendFile.UseVisualStyleBackColor = true;
             this.btnSendFile.Click += new System.EventHandler(this.btnSendFile_Click);
             // 
             // btnSaveData
             // 
-            this.btnSaveData.Location = new System.Drawing.Point(213, 17);
+            resources.ApplyResources(this.btnSaveData, "btnSaveData");
             this.btnSaveData.Name = "btnSaveData";
-            this.btnSaveData.Size = new System.Drawing.Size(75, 23);
-            this.btnSaveData.TabIndex = 4;
-            this.btnSaveData.Text = "保存数据";
             this.btnSaveData.UseVisualStyleBackColor = true;
             this.btnSaveData.Click += new System.EventHandler(this.btnSaveData_Click);
             // 
             // btnSendData
             // 
-            this.btnSendData.Location = new System.Drawing.Point(334, 109);
+            resources.ApplyResources(this.btnSendData, "btnSendData");
             this.btnSendData.Name = "btnSendData";
-            this.btnSendData.Size = new System.Drawing.Size(274, 23);
-            this.btnSendData.TabIndex = 4;
-            this.btnSendData.Text = "发送数据";
             this.btnSendData.UseVisualStyleBackColor = true;
             this.btnSendData.Click += new System.EventHandler(this.btnSendData_Click);
             // 
             // btnOpenSerial
             // 
-            this.btnOpenSerial.Location = new System.Drawing.Point(133, 17);
+            resources.ApplyResources(this.btnOpenSerial, "btnOpenSerial");
             this.btnOpenSerial.Name = "btnOpenSerial";
-            this.btnOpenSerial.Size = new System.Drawing.Size(75, 23);
-            this.btnOpenSerial.TabIndex = 4;
-            this.btnOpenSerial.Text = "打开串口";
             this.btnOpenSerial.UseVisualStyleBackColor = true;
             this.btnOpenSerial.Click += new System.EventHandler(this.btnOpenSerial_Click);
             // 
             // btnOpenFile
             // 
-            this.btnOpenFile.Location = new System.Drawing.Point(334, 80);
+            resources.ApplyResources(this.btnOpenFile, "btnOpenFile");
             this.btnOpenFile.Name = "btnOpenFile";
-            this.btnOpenFile.Size = new System.Drawing.Size(121, 23);
-            this.btnOpenFile.TabIndex = 4;
-            this.btnOpenFile.Text = "打开文件";
             this.btnOpenFile.UseVisualStyleBackColor = true;
             this.btnOpenFile.Click += new System.EventHandler(this.btnOpenFile_Click);
             // 
             // chkShowHEX
             // 
-            this.chkShowHEX.AutoSize = true;
-            this.chkShowHEX.Location = new System.Drawing.Point(457, 20);
+            resources.ApplyResources(this.chkShowHEX, "chkShowHEX");
             this.chkShowHEX.Name = "chkShowHEX";
-            this.chkShowHEX.Size = new System.Drawing.Size(66, 16);
-            this.chkShowHEX.TabIndex = 3;
-            this.chkShowHEX.Text = "HEX显示";
             this.chkShowHEX.UseVisualStyleBackColor = true;
             this.chkShowHEX.CheckedChanged += new System.EventHandler(this.chkShowHEX_CheckedChanged);
             // 
             // txtTimeInterval
             // 
-            this.txtTimeInterval.Location = new System.Drawing.Point(219, 84);
+            resources.ApplyResources(this.txtTimeInterval, "txtTimeInterval");
             this.txtTimeInterval.Name = "txtTimeInterval";
-            this.txtTimeInterval.Size = new System.Drawing.Size(62, 21);
-            this.txtTimeInterval.TabIndex = 4;
             // 
             // txtFileNme
             // 
-            this.txtFileNme.Location = new System.Drawing.Point(334, 54);
+            resources.ApplyResources(this.txtFileNme, "txtFileNme");
             this.txtFileNme.Name = "txtFileNme";
-            this.txtFileNme.Size = new System.Drawing.Size(274, 21);
-            this.txtFileNme.TabIndex = 4;
             // 
             // chkSendNewLine
             // 
-            this.chkSendNewLine.AutoSize = true;
-            this.chkSendNewLine.Location = new System.Drawing.Point(216, 107);
+            resources.ApplyResources(this.chkSendNewLine, "chkSendNewLine");
             this.chkSendNewLine.Name = "chkSendNewLine";
-            this.chkSendNewLine.Size = new System.Drawing.Size(72, 16);
-            this.chkSendNewLine.TabIndex = 3;
-            this.chkSendNewLine.Text = "发送新行";
             this.chkSendNewLine.UseVisualStyleBackColor = true;
             // 
             // chkSendHEX
             // 
-            this.chkSendHEX.AutoSize = true;
-            this.chkSendHEX.Location = new System.Drawing.Point(136, 106);
+            resources.ApplyResources(this.chkSendHEX, "chkSendHEX");
             this.chkSendHEX.Name = "chkSendHEX";
-            this.chkSendHEX.Size = new System.Drawing.Size(66, 16);
-            this.chkSendHEX.TabIndex = 3;
-            this.chkSendHEX.Text = "HEX发送";
             this.chkSendHEX.UseVisualStyleBackColor = true;
+            this.chkSendHEX.CheckedChanged += new System.EventHandler(this.chkSendHEX_CheckedChanged);
             // 
             // chkTimingSend
             // 
-            this.chkTimingSend.AutoSize = true;
-            this.chkTimingSend.Location = new System.Drawing.Point(136, 83);
+            resources.ApplyResources(this.chkTimingSend, "chkTimingSend");
             this.chkTimingSend.Name = "chkTimingSend";
-            this.chkTimingSend.Size = new System.Drawing.Size(72, 16);
-            this.chkTimingSend.TabIndex = 3;
-            this.chkTimingSend.Text = "定时发送";
             this.chkTimingSend.UseVisualStyleBackColor = true;
             this.chkTimingSend.CheckedChanged += new System.EventHandler(this.chkTimingSend_CheckedChanged);
             // 
+            // chkSaveToFile
+            // 
+            resources.ApplyResources(this.chkSaveToFile, "chkSaveToFile");
+            this.chkSaveToFile.Name = "chkSaveToFile";
+            this.chkSaveToFile.UseVisualStyleBackColor = true;
+            this.chkSaveToFile.CheckedChanged += new System.EventHandler(this.chkSaveToFile_CheckedChanged);
+            // 
             // chkRTS
             // 
-            this.chkRTS.AutoSize = true;
-            this.chkRTS.Location = new System.Drawing.Point(216, 59);
+            resources.ApplyResources(this.chkRTS, "chkRTS");
             this.chkRTS.Name = "chkRTS";
-            this.chkRTS.Size = new System.Drawing.Size(42, 16);
-            this.chkRTS.TabIndex = 3;
-            this.chkRTS.Text = "RTS";
             this.chkRTS.UseVisualStyleBackColor = true;
             this.chkRTS.CheckedChanged += new System.EventHandler(this.chkRTS_CheckedChanged);
             // 
             // chkDTR
             // 
-            this.chkDTR.AutoSize = true;
-            this.chkDTR.Location = new System.Drawing.Point(136, 60);
+            resources.ApplyResources(this.chkDTR, "chkDTR");
             this.chkDTR.Name = "chkDTR";
-            this.chkDTR.Size = new System.Drawing.Size(42, 16);
-            this.chkDTR.TabIndex = 3;
-            this.chkDTR.Text = "DTR";
             this.chkDTR.UseVisualStyleBackColor = true;
             this.chkDTR.CheckedChanged += new System.EventHandler(this.chkDTR_CheckedChanged);
             // 
@@ -299,95 +261,66 @@
             // 
             this.cmbFlowControl.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbFlowControl.FormattingEnabled = true;
-            this.cmbFlowControl.Location = new System.Drawing.Point(57, 151);
+            resources.ApplyResources(this.cmbFlowControl, "cmbFlowControl");
             this.cmbFlowControl.Name = "cmbFlowControl";
-            this.cmbFlowControl.Size = new System.Drawing.Size(75, 20);
-            this.cmbFlowControl.TabIndex = 2;
             this.cmbFlowControl.SelectedIndexChanged += new System.EventHandler(this.cmbFlowControl_SelectedIndexChanged);
             // 
             // lblFlowControl
             // 
-            this.lblFlowControl.AutoSize = true;
-            this.lblFlowControl.Location = new System.Drawing.Point(6, 152);
+            resources.ApplyResources(this.lblFlowControl, "lblFlowControl");
             this.lblFlowControl.Name = "lblFlowControl";
-            this.lblFlowControl.Size = new System.Drawing.Size(41, 12);
-            this.lblFlowControl.TabIndex = 1;
-            this.lblFlowControl.Text = "流控制";
             // 
             // cmbStopBit
             // 
             this.cmbStopBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbStopBit.FormattingEnabled = true;
-            this.cmbStopBit.Location = new System.Drawing.Point(57, 128);
+            resources.ApplyResources(this.cmbStopBit, "cmbStopBit");
             this.cmbStopBit.Name = "cmbStopBit";
-            this.cmbStopBit.Size = new System.Drawing.Size(75, 20);
-            this.cmbStopBit.TabIndex = 2;
             this.cmbStopBit.SelectedIndexChanged += new System.EventHandler(this.cmbStopBit_SelectedIndexChanged);
             // 
             // lblStopBit
             // 
-            this.lblStopBit.AutoSize = true;
-            this.lblStopBit.Location = new System.Drawing.Point(6, 129);
+            resources.ApplyResources(this.lblStopBit, "lblStopBit");
             this.lblStopBit.Name = "lblStopBit";
-            this.lblStopBit.Size = new System.Drawing.Size(41, 12);
-            this.lblStopBit.TabIndex = 1;
-            this.lblStopBit.Text = "停止位";
             // 
             // cmbParityBit
             // 
             this.cmbParityBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbParityBit.FormattingEnabled = true;
-            this.cmbParityBit.Location = new System.Drawing.Point(57, 105);
+            resources.ApplyResources(this.cmbParityBit, "cmbParityBit");
             this.cmbParityBit.Name = "cmbParityBit";
-            this.cmbParityBit.Size = new System.Drawing.Size(75, 20);
-            this.cmbParityBit.TabIndex = 2;
             this.cmbParityBit.SelectedIndexChanged += new System.EventHandler(this.cmbParityBit_SelectedIndexChanged);
             // 
             // lblParityBit
             // 
-            this.lblParityBit.AutoSize = true;
-            this.lblParityBit.Location = new System.Drawing.Point(6, 106);
+            resources.ApplyResources(this.lblParityBit, "lblParityBit");
             this.lblParityBit.Name = "lblParityBit";
-            this.lblParityBit.Size = new System.Drawing.Size(41, 12);
-            this.lblParityBit.TabIndex = 1;
-            this.lblParityBit.Text = "校验位";
             // 
             // cmbDataBit
             // 
             this.cmbDataBit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cmbDataBit.FormattingEnabled = true;
-            this.cmbDataBit.Location = new System.Drawing.Point(57, 82);
+            resources.ApplyResources(this.cmbDataBit, "cmbDataBit");
             this.cmbDataBit.Name = "cmbDataBit";
-            this.cmbDataBit.Size = new System.Drawing.Size(75, 20);
-            this.cmbDataBit.TabIndex = 2;
             this.cmbDataBit.SelectedIndexChanged += new System.EventHandler(this.cmbDataBit_SelectedIndexChanged);
             // 
             // lblDataBit
             // 
-            this.lblDataBit.AutoSize = true;
-            this.lblDataBit.Location = new System.Drawing.Point(6, 83);
+            resources.ApplyResources(this.lblDataBit, "lblDataBit");
             this.lblDataBit.Name = "lblDataBit";
-            this.lblDataBit.Size = new System.Drawing.Size(41, 12);
-            this.lblDataBit.TabIndex = 1;
-            this.lblDataBit.Text = "数据位";
             // 
             // cmbBaudRate
             // 
             this.cmbBaudRate.FormattingEnabled = true;
-            this.cmbBaudRate.Location = new System.Drawing.Point(57, 59);
+            resources.ApplyResources(this.cmbBaudRate, "cmbBaudRate");
             this.cmbBaudRate.Name = "cmbBaudRate";
-            this.cmbBaudRate.Size = new System.Drawing.Size(75, 20);
-            this.cmbBaudRate.TabIndex = 2;
             this.cmbBaudRate.SelectedIndexChanged += new System.EventHandler(this.cmbBaudRate_SelectedIndexChanged);
+            this.cmbBaudRate.Leave += new System.EventHandler(this.cmbBaudRate_Leave);
             // 
             // lblBaudRate
             // 
-            this.lblBaudRate.AutoSize = true;
-            this.lblBaudRate.Location = new System.Drawing.Point(6, 60);
+            resources.ApplyResources(this.lblBaudRate, "lblBaudRate");
             this.lblBaudRate.Name = "lblBaudRate";
-            this.lblBaudRate.Size = new System.Drawing.Size(41, 12);
-            this.lblBaudRate.TabIndex = 1;
-            this.lblBaudRate.Text = "波特率";
             // 
             // ssrSerialInfo
             // 
@@ -396,45 +329,31 @@
             this.tsslReceiveCount,
             this.tsslSerialInfo,
             this.tsslCTSDSR});
-            this.ssrSerialInfo.Location = new System.Drawing.Point(0, 450);
+            resources.ApplyResources(this.ssrSerialInfo, "ssrSerialInfo");
             this.ssrSerialInfo.Name = "ssrSerialInfo";
-            this.ssrSerialInfo.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.ssrSerialInfo.Size = new System.Drawing.Size(623, 26);
-            this.ssrSerialInfo.TabIndex = 5;
-            this.ssrSerialInfo.Text = "statusStrip1";
             // 
             // tsslSendCount
             // 
-            this.tsslSendCount.AutoSize = false;
+            resources.ApplyResources(this.tsslSendCount, "tsslSendCount");
             this.tsslSendCount.Name = "tsslSendCount";
-            this.tsslSendCount.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.tsslSendCount.Size = new System.Drawing.Size(98, 21);
-            this.tsslSendCount.Text = "发送：0";
-            this.tsslSendCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsslReceiveCount
             // 
-            this.tsslReceiveCount.AutoSize = false;
+            resources.ApplyResources(this.tsslReceiveCount, "tsslReceiveCount");
             this.tsslReceiveCount.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.tsslReceiveCount.Name = "tsslReceiveCount";
-            this.tsslReceiveCount.Size = new System.Drawing.Size(98, 21);
-            this.tsslReceiveCount.Text = "接收：0";
-            this.tsslReceiveCount.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tsslSerialInfo
             // 
             this.tsslSerialInfo.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.tsslSerialInfo.Name = "tsslSerialInfo";
-            this.tsslSerialInfo.Size = new System.Drawing.Size(262, 21);
-            this.tsslSerialInfo.Text = "COM10已打开  256000bps,8,1,无校验,无流控";
+            resources.ApplyResources(this.tsslSerialInfo, "tsslSerialInfo");
             // 
             // tsslCTSDSR
             // 
             this.tsslCTSDSR.BorderSides = System.Windows.Forms.ToolStripStatusLabelBorderSides.Left;
             this.tsslCTSDSR.Name = "tsslCTSDSR";
-            this.tsslCTSDSR.Size = new System.Drawing.Size(98, 21);
-            this.tsslCTSDSR.Text = "DTR=1  RTS=1";
-            this.tsslCTSDSR.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            resources.ApplyResources(this.tsslCTSDSR, "tsslCTSDSR");
             // 
             // timerSend
             // 
@@ -442,19 +361,18 @@
             // 
             // frmSerialTool
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
+            resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(623, 476);
             this.Controls.Add(this.ssrSerialInfo);
             this.Controls.Add(this.grpSerial);
             this.Controls.Add(this.txtReceiveData);
-            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "frmSerialTool";
-            this.Text = "串口调试工具 V1.0  By：VIIs";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.frmSerialTool_FormClosing);
             this.Load += new System.EventHandler(this.frmSerialTool_Load);
             this.SizeChanged += new System.EventHandler(this.frmSerialTool_SizeChanged);
             this.grpSerial.ResumeLayout(false);
             this.grpSerial.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ssrSerialInfo.ResumeLayout(false);
             this.ssrSerialInfo.PerformLayout();
             this.ResumeLayout(false);
@@ -501,6 +419,9 @@
         private System.Windows.Forms.ToolStripStatusLabel tsslCTSDSR;
         private System.IO.Ports.SerialPort serialPort1;
         private System.Windows.Forms.Timer timerSend;
+        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel llbBlog;
+        private System.Windows.Forms.CheckBox chkSaveToFile;
     }
 }
 
